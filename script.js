@@ -21,8 +21,8 @@ playerOneBtn.addEventListener('click', function() {
     pOneRounds = pOneRounds+1;
     playerOneRounds.innerHTML = `// ${pOneRounds} ROUNDS`;
 
-    pOneMoney = pOneMoney + 1940000;
-    playerOneMoney.innerHTML = `// $${pOneMoney}`;
+    pTwoMoney = pTwoMoney + 1940000;
+    playerTwoMoney.innerHTML = `// $${pTwoMoney}`;
 
     document.getElementById('clickSound').play();
 })
@@ -34,8 +34,8 @@ playerTwoBtn.addEventListener('click', function() {
     pTwoRounds = pTwoRounds+1;
     playerTwoRounds.innerHTML = `${pTwoRounds} ROUNDS`;
 
-    pTwoMoney = pTwoMoney + 1940000;
-    playerTwoMoney.innerHTML = `// $${pTwoMoney}`;
+    pOneMoney = pOneMoney + 1940000;
+    playerOneMoney.innerHTML = `// $${pOneMoney}`;
 
     document.getElementById('clickSound').play();
 })
