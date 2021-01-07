@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button class="player-1-btn">
+            <div class="player-one">
+                <div class="info-box player">
+                    <div class="title player-title">
+                        <div class="square"> </div>
+                        <div class="title-text" id="playerOne">RIKOSSORA</div>
+                    </div>
+                    <div class="info">
+                        <div class="info-text" id="playerOneRounds">// X ROUNDS</div>
+                    </div>
+                </div>
+
+                <div class="info-box player earnings">
+                    <div class="info">
+                        <div class="info-text" id="playerOneMoney">// $_MONEY_TOTAL</div>
+                    </div>
+                </div>
+            </div>
+        </button>
+
+        <div class="seperator"></div>
+
+        <button class="player-2-btn">
+            <div class="player-two">
+                <div class="info-box player">
+                    <div class="title player-title">
+                        <div class="square"> </div>
+                        <div class="title-text" id="playerTwo">FOTAGAS</div>
+                    </div>
+                    <div class="info">
+                        <div class="info-text" id="playerTwoRounds">// X ROUNDS</div>
+                    </div>
+                </div>
+
+                <div class="info-box player earnings">
+                    <div class="info">
+                        <div class="info-text" id="playerTwoMoney">// $_MONEY_TOTAL</div>
+                    </div>
+                </div>
+            </div>
+        </button>
+
+        <button class="reset-btn">
+            CLOCK OUT
+        </button>
+
+        <button class="edit-btn">
+            EDIT
+        </button>
+
+        <div class="modal hidden">
+            <div class="info-box player">
+                <label class="title player-title" for="playerOne">Player One:</label>
+                <input type="text" placeholder="PSN ID" name="playerOne">   
+            </div>
+            <div class="info-box player">
+                <label class="title player-title" for="playerTwo">Player Two:</label>
+                <input type="text" placeholder="PSN ID" name="playerTwo">
+            </div>
+            <button class="done-btn">
+                DONE
+            </button>
+        </div>
+
+    </div>   
+
+
+<audio id="clickSound" src="assets/sounds/zapsplat_multimedia_button_click_006_53867.mp3" preload="auto"></audio>
+<audio id="doneSound" src="assets/sounds/foley_zipper_done_up_on_cloth_makeup_bag_1.mp3" preload="auto"></audio>
+<script src="script.js"></script>
+</body>
+</html>
