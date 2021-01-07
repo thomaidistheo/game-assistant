@@ -4,6 +4,7 @@
     box-sizing: border-box;
 
     text-transform: uppercase;
+    touch-action: manipulation;
 }
 
 :root {
