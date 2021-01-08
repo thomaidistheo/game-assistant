@@ -97,6 +97,8 @@ nextBtn.addEventListener('click', function() {
         playerOneActive.classList.remove("hidden");
         playerTwoActive.classList.add("hidden");
     }
+
+    document.getElementById('clickSound').play();
 });
 
 
