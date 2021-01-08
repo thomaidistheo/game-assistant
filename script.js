@@ -83,6 +83,69 @@ resetBtn.addEventListener('click', function() {
     document.getElementById('doneSound').play();
 });
 
+document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+        playerOneBtn.disabled = true;
+    playerTwoBtn.disabled = true;
+
+    counterFunc();
+    console.log(totalCounter);
+
+    if (playerOne.classList.contains("inactive")) {
+        playerOne.classList.remove("inactive");
+        playerTwo.classList.add("inactive");
+
+        pOneRounds = pOneRounds+1;
+        if(pOneRounds <= 1){
+            playerOneRounds.innerHTML = `// ${pOneRounds} TURN`;
+        } else {
+            playerOneRounds.innerHTML = `// ${pOneRounds} TURNS`;
+        }
+
+        pTwoMoney = pTwoMoney + 1940000;
+        playerTwoMoney.innerHTML = `// $${pTwoMoney}`;
+
+        playerOneActive.classList.remove("hidden");
+        playerTwoActive.classList.add("hidden");
+
+    } else if (playerTwo.classList.contains("inactive")) {
+        playerOne.classList.add("inactive");
+        playerTwo.classList.remove("inactive");
+
+        pTwoRounds = pTwoRounds+1;
+        if(pOneRounds <= 1){
+            playerTwoRounds.innerHTML = `// ${pTwoRounds} TURN`;
+        } else {
+            playerTwoRounds.innerHTML = `// ${pTwoRounds} TURNS`;
+        }
+    
+        pOneMoney = pOneMoney + 1940000;
+        playerOneMoney.innerHTML = `// $${pOneMoney}`;
+
+        playerTwoActive.classList.remove("hidden");
+        playerOneActive.classList.add("hidden");
+
+    } else if (!playerOne.classList.contains("inactive") && !playerTwo.classList.contains("inactive")) {
+        playerTwo.classList.add("inactive");
+
+        pOneRounds = pOneRounds+1;
+        if(pOneRounds <= 1){
+            playerOneRounds.innerHTML = `// ${pOneRounds} TURN`;
+        } else {
+            playerOneRounds.innerHTML = `// ${pOneRounds} TURNS`;
+        }
+
+        pTwoMoney = pTwoMoney + 1940000;
+        playerTwoMoney.innerHTML = `// $${pTwoMoney}`;
+
+        playerOneActive.classList.remove("hidden");
+        playerTwoActive.classList.add("hidden");
+    }
+
+    document.getElementById('clickSound').play();
+    }
+}
+
 nextBtn.addEventListener('click', function() {
     playerOneBtn.disabled = true;
     playerTwoBtn.disabled = true;
@@ -143,6 +206,8 @@ nextBtn.addEventListener('click', function() {
 
     document.getElementById('clickSound').play();
 });
+
+
 
 
 // ! MODAL 
