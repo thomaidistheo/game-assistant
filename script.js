@@ -37,6 +37,8 @@ playerOneBtn.addEventListener('click', function() {
     playerTwo.classList.add("inactive");
     playerOne.classList.remove("inactive");
 
+    counterFunc();
+
     pOneRounds = pOneRounds+1;
     if(pOneRounds <= 1){
         playerOneRounds.innerHTML = `// ${pOneRounds} TURN`;
@@ -56,6 +58,8 @@ playerOneBtn.addEventListener('click', function() {
 playerTwoBtn.addEventListener('click', function() {
     playerOne.classList.add("inactive");
     playerTwo.classList.remove("inactive");
+
+    counterFunc();
 
     pTwoRounds = pTwoRounds+1;
     if(pTwoRounds <= 1){
