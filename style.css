@@ -229,3 +229,7 @@ input {
 
     position: absolute;
 }
+
+.instructions {
+    font-size: 10px;
+}
