@@ -220,7 +220,7 @@ let doneBtn = document.querySelector(".done-btn");
 let modal = document.querySelector(".modal");
 
 editBtn.addEventListener('click', function() {
-    modal.classList.remove("hidden");
+    modal.classList.toggle("hidden");
 })
 
 doneBtn.addEventListener('click', function() {
