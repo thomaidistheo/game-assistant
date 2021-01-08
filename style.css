@@ -30,9 +30,15 @@
 
 html{
     font-family: Arial, Helvetica, sans-serif;
-
-    background-color: var(--dark-bg);
+/* 
+    background-color: var(--dark-bg); */
+    background-image: url('assets/imgs/noise.jpg');
     color: var(--light-text);
+}
+
+body {
+    background: rgba(0,0,0,0.8);
+    height: 100vh;
 }
 
 textarea, input { 
@@ -51,6 +57,8 @@ textarea, input {
     justify-content: center;
     align-items: center;
     padding-top: 50px;
+
+    opacity: 0.85;
 }
 
 
@@ -107,7 +115,7 @@ textarea, input {
 }
 
 .inactive {
-    opacity: 0.2;
+    opacity: 0.35;
 }
 
 .player-1-btn {
@@ -126,7 +134,7 @@ textarea, input {
 
 .reset-btn {
     height: 30px;
-    width: 100px;
+    width: 110px;
 
     margin-top: 25px;
 
@@ -136,11 +144,28 @@ textarea, input {
     color: var(--light-text);
 }
 
+.next-btn { 
+    height: 50px;
+    width: 225px;
+
+    margin-top: 25px;
+
+    background: var(--dark-red);
+    border: 2px solid var(--light-red);
+
+    color: var(--light-text);
+}
+
+.next-btn:hover { 
+    background: var(--light-red);
+    border: 2px solid var(--dark-red);
+}
+
 .edit-btn {
     height: 30px;
-    width: 100px;
+    width: 110px;
 
-    margin: 30px 0 25px 0;
+    margin: 15px 0 25px 0;
 
     background: var(--dark-grey);
     border: 2px solid var(--light-grey);
@@ -191,4 +216,16 @@ input {
 
 .hidden { 
     display: none;
+}
+
+.player-one-active { 
+    margin-top: -20px;
+
+    position: absolute;
+}
+
+.player-two-active {
+    margin-top: -20px;
+
+    position: absolute;
 }

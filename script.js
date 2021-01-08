@@ -2,7 +2,10 @@ let playerOne = document.querySelector(".player-one");
 let playerOneBtn = document.querySelector(".player-1-btn");
 let playerTwo = document.querySelector(".player-two");
 let playerTwoBtn = document.querySelector(".player-2-btn");
-let resetBtn = document.querySelector(".reset-btn")
+let resetBtn = document.querySelector(".reset-btn");
+let nextBtn = document.querySelector(".next-btn");
+let playerOneActive = document.querySelector(".player-one-active");
+let playerTwoActive = document.querySelector(".player-two-active");
 
 let playerOneRounds = document.querySelector("#playerOneRounds");
 let playerTwoRounds = document.querySelector("#playerTwoRounds");
@@ -24,8 +27,11 @@ playerOneBtn.addEventListener('click', function() {
     pTwoMoney = pTwoMoney + 1940000;
     playerTwoMoney.innerHTML = `// $${pTwoMoney}`;
 
+    playerOneActive.classList.remove("hidden");
+    playerTwoActive.classList.add("hidden")
+
     document.getElementById('clickSound').play();
-})
+});
 
 playerTwoBtn.addEventListener('click', function() {
     playerOne.classList.add("inactive");
@@ -37,14 +43,61 @@ playerTwoBtn.addEventListener('click', function() {
     pOneMoney = pOneMoney + 1940000;
     playerOneMoney.innerHTML = `// $${pOneMoney}`;
 
+    playerTwoActive.classList.remove("hidden");
+    playerOneActive.classList.add("hidden");
+
     document.getElementById('clickSound').play();
-})
+});
 
 resetBtn.addEventListener('click', function() {
     playerOne.classList.remove("inactive");
     playerTwo.classList.remove("inactive")
     document.getElementById('doneSound').play();
-})
+});
+
+nextBtn.addEventListener('click', function() {
+    playerOneBtn.disabled = true;
+    playerTwoBtn.disabled = true;
+
+    if (playerOne.classList.contains("inactive")) {
+        playerOne.classList.remove("inactive");
+        playerTwo.classList.add("inactive");
+
+        pOneRounds = pOneRounds+1;
+        playerOneRounds.innerHTML = `// ${pOneRounds} ROUNDS`;
+
+        pTwoMoney = pTwoMoney + 1940000;
+        playerTwoMoney.innerHTML = `// $${pTwoMoney}`;
+
+        playerOneActive.classList.remove("hidden");
+        playerTwoActive.classList.add("hidden");
+
+    } else if (playerTwo.classList.contains("inactive")) {
+        playerOne.classList.add("inactive");
+        playerTwo.classList.remove("inactive");
+
+        pTwoRounds = pTwoRounds+1;
+        playerTwoRounds.innerHTML = `${pTwoRounds} ROUNDS`;
+    
+        pOneMoney = pOneMoney + 1940000;
+        playerOneMoney.innerHTML = `// $${pOneMoney}`;
+
+        playerTwoActive.classList.remove("hidden");
+        playerOneActive.classList.add("hidden");
+
+    } else if (!playerOne.classList.contains("inactive") && !playerTwo.classList.contains("inactive")) {
+        playerTwo.classList.add("inactive");
+
+        pOneRounds = pOneRounds+1;
+        playerOneRounds.innerHTML = `// ${pOneRounds} ROUNDS`;
+
+        pTwoMoney = pTwoMoney + 1940000;
+        playerTwoMoney.innerHTML = `// $${pTwoMoney}`;
+
+        playerOneActive.classList.remove("hidden");
+        playerTwoActive.classList.add("hidden");
+    }
+});
 
 
 // ! MODAL 
