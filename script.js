@@ -12,18 +12,38 @@ let playerTwoRounds = document.querySelector("#playerTwoRounds");
 let pOneRounds = 0;
 let pTwoRounds = 0;
 
+let counter = document.querySelector(".counter");
+let totalCounter = 0;
+
 let playerOneMoney = document.querySelector("#playerOneMoney");
 let playerTwoMoney = document.querySelector("#playerTwoMoney");
 let pOneMoney = 0;
 let pTwoMoney = 0;
+
+function counterFunc() {
+    if ((pOneRounds + pTwoRounds) === 0){
+        totalCounter = 0;
+        return totalCounter;
+    } else if ((pOneRounds + pTwoRounds) % 2 === 0) {
+        totalCounter++;
+        counter.innerHTML = totalCounter;
+        return totalCounter;
+    } else {
+        return totalCounter;
+    }
+}
 
 playerOneBtn.addEventListener('click', function() {
     playerTwo.classList.add("inactive");
     playerOne.classList.remove("inactive");
 
     pOneRounds = pOneRounds+1;
-    playerOneRounds.innerHTML = `// ${pOneRounds} ROUNDS`;
-
+    if(pOneRounds <= 1){
+        playerOneRounds.innerHTML = `// ${pOneRounds} TURN`;
+    } else {
+        playerOneRounds.innerHTML = `// ${pOneRounds} TURNS`;
+    }
+    
     pTwoMoney = pTwoMoney + 1940000;
     playerTwoMoney.innerHTML = `// $${pTwoMoney}`;
 
@@ -38,7 +58,11 @@ playerTwoBtn.addEventListener('click', function() {
     playerTwo.classList.remove("inactive");
 
     pTwoRounds = pTwoRounds+1;
-    playerTwoRounds.innerHTML = `${pTwoRounds} ROUNDS`;
+    if(pTwoRounds <= 1){
+        playerTwoRounds.innerHTML = `// ${pOneRounds} TURN`;
+    } else {
+        playerTwoRounds.innerHTML = `// ${pOneRounds} TURNS`;
+    }
 
     pOneMoney = pOneMoney + 1940000;
     playerOneMoney.innerHTML = `// $${pOneMoney}`;
@@ -59,12 +83,19 @@ nextBtn.addEventListener('click', function() {
     playerOneBtn.disabled = true;
     playerTwoBtn.disabled = true;
 
+    counterFunc();
+    console.log(totalCounter);
+
     if (playerOne.classList.contains("inactive")) {
         playerOne.classList.remove("inactive");
         playerTwo.classList.add("inactive");
 
         pOneRounds = pOneRounds+1;
-        playerOneRounds.innerHTML = `// ${pOneRounds} ROUNDS`;
+        if(pOneRounds <= 1){
+            playerOneRounds.innerHTML = `// ${pOneRounds} TURN`;
+        } else {
+            playerOneRounds.innerHTML = `// ${pOneRounds} TURNS`;
+        }
 
         pTwoMoney = pTwoMoney + 1940000;
         playerTwoMoney.innerHTML = `// $${pTwoMoney}`;
@@ -77,7 +108,11 @@ nextBtn.addEventListener('click', function() {
         playerTwo.classList.remove("inactive");
 
         pTwoRounds = pTwoRounds+1;
-        playerTwoRounds.innerHTML = `${pTwoRounds} ROUNDS`;
+        if(pOneRounds <= 1){
+            playerTwoRounds.innerHTML = `// ${pTwoRounds} TURN`;
+        } else {
+            playerTwoRounds.innerHTML = `// ${pTwoRounds} TURNS`;
+        }
     
         pOneMoney = pOneMoney + 1940000;
         playerOneMoney.innerHTML = `// $${pOneMoney}`;
@@ -89,7 +124,11 @@ nextBtn.addEventListener('click', function() {
         playerTwo.classList.add("inactive");
 
         pOneRounds = pOneRounds+1;
-        playerOneRounds.innerHTML = `// ${pOneRounds} ROUNDS`;
+        if(pOneRounds <= 1){
+            playerOneRounds.innerHTML = `// ${pOneRounds} TURN`;
+        } else {
+            playerOneRounds.innerHTML = `// ${pOneRounds} TURNS`;
+        }
 
         pTwoMoney = pTwoMoney + 1940000;
         playerTwoMoney.innerHTML = `// $${pTwoMoney}`;
@@ -123,7 +162,3 @@ doneBtn.addEventListener('click', function() {
     playerOneName.innerHTML = playerOneNameInput.value;
     playerTwoName.innerHTML = playerTwoNameInput.value;
 })
-
-
-
-

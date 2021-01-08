@@ -12,53 +12,62 @@
 <body>
     <div class="container">
        
-        <button class="player-1-btn">
-            <div class="player-one">
-                <p class="player-one-active hidden">ACTIVE</p>
-                <div class="info-box player">
-                    <div class="title player-title">
-                        <div class="square"> </div>
-                        <div class="title-text" id="playerOne">PLAYER ONE</div>
+        <div class="players-container">
+            <button class="player-1-btn">
+                <div class="player-one">
+                    <p class="player-one-active hidden">ACTIVE</p>
+                    <div class="info-box player">
+                        <div class="title player-title">
+                            <div class="square"> </div>
+                            <div class="title-text" id="playerOne">PLAYER ONE</div>
+                        </div>
+                        <div class="info">
+                            <div class="info-text" id="playerOneRounds">// X TURNS</div>
+                        </div>
                     </div>
-                    <div class="info">
-                        <div class="info-text" id="playerOneRounds">// X ROUNDS</div>
-                    </div>
-                </div>
-                
-                <div class="info-box player earnings">
-                    <div class="info">
-                        <div class="info-text" id="playerOneMoney">// $_MONEY_TOTAL</div>
-                    </div>
-                </div>
-            </div>
-        </button>
-        
-        <div class="seperator"></div>
-        
-        <button class="player-2-btn">
-            <div class="player-two">
-                <p class="player-two-active hidden">ACTIVE</p>
-                <div class="info-box player">
-                    <div class="title player-title">
-                        <div class="square"> </div>
-                        <div class="title-text" id="playerTwo">PLAYER TWO</div>
-                    </div>
-                    <div class="info">
-                        <div class="info-text" id="playerTwoRounds">// X ROUNDS</div>
+                    
+                    <div class="info-box player earnings">
+                        <div class="info">
+                            <div class="info-text" id="playerOneMoney">// $_MONEY_TOTAL</div>
+                        </div>
                     </div>
                 </div>
+            </button>
+            
+            <div class="seperator"></div>
+            
+            <button class="player-2-btn">
+                <div class="player-two">
+                    <p class="player-two-active hidden">ACTIVE</p>
+                    <div class="info-box player">
+                        <div class="title player-title">
+                            <div class="square"> </div>
+                            <div class="title-text" id="playerTwo">PLAYER TWO</div>
+                        </div>
+                        <div class="info">
+                            <div class="info-text" id="playerTwoRounds">// X TURNS</div>
+                        </div>
+                    </div>
+    
+                    <div class="info-box player earnings">
+                        <div class="info">
+                            <div class="info-text" id="playerTwoMoney">// $_MONEY_TOTAL</div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+    
+    
+        </div>
 
-                <div class="info-box player earnings">
-                    <div class="info">
-                        <div class="info-text" id="playerTwoMoney">// $_MONEY_TOTAL</div>
-                    </div>
-                </div>
+        <div class="next-host-rounds">
+            <button class="next-btn">
+                NEXT HOST
+            </button>
+            <div class="counter">
+                X
             </div>
-        </button>
-
-        <button class="next-btn">
-            NEXT HOST
-        </button>
+        </div>
 
         <div class="section">
             <button class="reset-btn">
