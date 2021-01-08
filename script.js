@@ -207,9 +207,6 @@ nextBtn.addEventListener('click', function() {
     document.getElementById('clickSound').play();
 });
 
-
-
-
 // ! MODAL 
 
 // ! CUSTOM NAMES
@@ -231,3 +228,6 @@ doneBtn.addEventListener('click', function() {
     playerOneName.innerHTML = playerOneNameInput.value;
     playerTwoName.innerHTML = playerTwoNameInput.value;
 })
+
+
+/* TODO LocalHost  */
