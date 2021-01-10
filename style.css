@@ -138,7 +138,7 @@ textarea, input {
 
 .next-btn { 
     height: 50px;
-    width: 191px;
+    width: 186px;
 
     background: var(--dark-red);
     border: 2px solid var(--light-red);
@@ -234,7 +234,7 @@ input {
 
 .counter {
     height: 50px;
-    width: 45px;
+    width: 50px;
 
     background: var(--dark-grey);
     border: 2px solid var(--light-grey);
