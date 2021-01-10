@@ -128,7 +128,7 @@ textarea, input {
 
 .reset-btn {
     height: 30px;
-    width: 125px;
+    width: 120px;
 
     background: var(--dark-red);
     border: 2px solid var(--light-red);
@@ -154,7 +154,7 @@ textarea, input {
 
 .edit-btn {
     height: 30px;
-    width: 125px;
+    width: 120px;
 
     background: var(--dark-grey);
     border: 2px solid var(--light-grey);
