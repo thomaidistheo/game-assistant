@@ -150,6 +150,8 @@ nextBtn.addEventListener('click', function() {
     playerOneBtn.disabled = true;
     playerTwoBtn.disabled = true;
 
+    nextBtn.innerHTML = 'next host';
+
     counterFunc();
     console.log(totalCounter);
 
