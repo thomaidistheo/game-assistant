@@ -168,7 +168,6 @@ textarea, input {
 
 .modal-container {
     position: absolute;
-    margin-bottom: 50%;
 }
 
 .modal {
@@ -205,7 +204,7 @@ input {
     width: 100px;
 
     margin-top: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 150px;
 
     background: var(--dark-red);
     border: 2px solid var(--light-red);
