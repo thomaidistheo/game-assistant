@@ -224,15 +224,14 @@ let modal = document.querySelector(".modal");
 
 editBtn.addEventListener('click', function() {
     modal.classList.toggle("hidden");
-    playersContainer.classList.toggle("blur");
-    playerOneBtn.disabled = true;
-    playerTwoBtn.disabled = true;
-    nextBtn.disabled = true;
-    resetBtn.disabled = true;
+    playerOne.classList.toggle("hidden");
+    playerTwo.classList.toggle("hidden");
 })
 
 doneBtn.addEventListener('click', function() {
     modal.classList.add("hidden");
+    playerOne.classList.toggle("hidden");
+    playerTwo.classList.toggle("hidden");
     playersContainer.classList.toggle("blur");
     playerOneName.innerHTML = playerOneNameInput.value;
     playerTwoName.innerHTML = playerTwoNameInput.value;

@@ -161,15 +161,6 @@ textarea, input {
     color: var(--light-text);
 }
 
-.blur {
-    filter: blur(1rem);
-    background: rgba(0, 0, 0, 0.7);
-}
-
-.modal-container {
-    position: absolute;
-}
-
 .modal {
     display: flex;
     flex-direction: column;
@@ -204,7 +195,7 @@ input {
     width: 100px;
 
     margin-top: 15px;
-    margin-bottom: 150px;
+    margin-bottom: 30px;
 
     background: var(--dark-red);
     border: 2px solid var(--light-red);
