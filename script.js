@@ -235,4 +235,4 @@ doneBtn.addEventListener('click', function() {
 })
 
 
-/* TODO LocalHost  */
+/* TODO LocalStorage */
