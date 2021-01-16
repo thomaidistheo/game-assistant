@@ -22,6 +22,15 @@ let playerTwoMoney = document.querySelector("#playerTwoMoney");
 let pOneMoney = 0;
 let pTwoMoney = 0;
 
+let playerOneName = document.querySelector("#playerOne");
+let playerTwoName = document.querySelector("#playerTwo");
+let playerOneNameInput = document.querySelector('[name="playerOne"]')
+let playerTwoNameInput = document.querySelector('[name="playerTwo"]')
+
+let editBtn = document.querySelector(".edit-btn");
+let doneBtn = document.querySelector(".done-btn");
+let modal = document.querySelector(".modal");
+
 function counterFunc() {
     if ((pOneRounds + pTwoRounds) === 0){
         totalCounter = 0;
@@ -38,6 +47,7 @@ function counterFunc() {
 playerOneBtn.addEventListener('click', function() {
     playerTwo.classList.add("inactive");
     playerOne.classList.remove("inactive");
+    nextBtn.innerHTML = 'next host';
 
     counterFunc();
 
@@ -60,6 +70,7 @@ playerOneBtn.addEventListener('click', function() {
 playerTwoBtn.addEventListener('click', function() {
     playerOne.classList.add("inactive");
     playerTwo.classList.remove("inactive");
+    nextBtn.innerHTML = 'next host';
 
     counterFunc();
 
@@ -85,70 +96,16 @@ reset = () => {
     document.getElementById('doneSound').play();
 };
 
-document.body.onkeyup = function(e){
-    if(e.keyCode == 32){
-        playerOneBtn.disabled = true;
-    playerTwoBtn.disabled = true;
-
-    counterFunc();
-    console.log(totalCounter);
-
-    if (playerOne.classList.contains("inactive")) {
-        playerOne.classList.remove("inactive");
-        playerTwo.classList.add("inactive");
-
-        pOneRounds = pOneRounds+1;
-        if(pOneRounds <= 1){
-            playerOneRounds.innerHTML = `// ${pOneRounds} TURN`;
-        } else {
-            playerOneRounds.innerHTML = `// ${pOneRounds} TURNS`;
-        }
-
-        pTwoMoney = pTwoMoney + 1940000;
-        playerTwoMoney.innerHTML = `// $${pTwoMoney}`;
-
-        playerOneActive.classList.remove("hidden");
-        playerTwoActive.classList.add("hidden");
-
-    } else if (playerTwo.classList.contains("inactive")) {
-        playerOne.classList.add("inactive");
-        playerTwo.classList.remove("inactive");
-
-        pTwoRounds = pTwoRounds+1;
-        if(pOneRounds <= 1){
-            playerTwoRounds.innerHTML = `// ${pTwoRounds} TURN`;
-        } else {
-            playerTwoRounds.innerHTML = `// ${pTwoRounds} TURNS`;
-        }
-    
-        pOneMoney = pOneMoney + 1940000;
-        playerOneMoney.innerHTML = `// $${pOneMoney}`;
-
-        playerTwoActive.classList.remove("hidden");
-        playerOneActive.classList.add("hidden");
-
-    } else if (!playerOne.classList.contains("inactive") && !playerTwo.classList.contains("inactive")) {
-        playerTwo.classList.add("inactive");
-
-        pOneRounds = pOneRounds+1;
-        if(pOneRounds <= 1){
-            playerOneRounds.innerHTML = `// ${pOneRounds} TURN`;
-        } else {
-            playerOneRounds.innerHTML = `// ${pOneRounds} TURNS`;
-        }
-
-        pTwoMoney = pTwoMoney + 1940000;
-        playerTwoMoney.innerHTML = `// $${pTwoMoney}`;
-
-        playerOneActive.classList.remove("hidden");
-        playerTwoActive.classList.add("hidden");
-    }
-
-    document.getElementById('clickSound').play();
-    }
+document.body.onkeyup = () => {
+    startHost();
 }
 
-nextBtn.addEventListener('click', function() {
+
+nextBtn.addEventListener('click', () => {
+    startHost();
+});
+
+function startHost() {
     playerOneBtn.disabled = true;
     playerTwoBtn.disabled = true;
 
@@ -209,19 +166,9 @@ nextBtn.addEventListener('click', function() {
     }
 
     document.getElementById('clickSound').play();
-});
+}
 
-// ! MODAL 
-
-// ! CUSTOM NAMES
-let playerOneName = document.querySelector("#playerOne");
-let playerTwoName = document.querySelector("#playerTwo");
-let playerOneNameInput = document.querySelector('[name="playerOne"]')
-let playerTwoNameInput = document.querySelector('[name="playerTwo"]')
-
-let editBtn = document.querySelector(".edit-btn");
-let doneBtn = document.querySelector(".done-btn");
-let modal = document.querySelector(".modal");
+// ! --------------- MODAL  --------------- 
 
 editBtn.addEventListener('click', function() {
     modal.classList.toggle("hidden");
@@ -241,4 +188,4 @@ doneBtn.addEventListener('click', function() {
 })
 
 
-/* TODO LocalStorage */
+// TODO --------------- LocalStorage ---------------
