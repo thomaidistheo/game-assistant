@@ -63,9 +63,9 @@ playerTwoBtn.addEventListener('click', function() {
 
     pTwoRounds = pTwoRounds+1;
     if(pTwoRounds <= 1){
-        playerTwoRounds.innerHTML = `// ${pOneRounds} TURN`;
+        playerTwoRounds.innerHTML = `// ${pTwoRounds} TURN`;
     } else {
-        playerTwoRounds.innerHTML = `// ${pOneRounds} TURNS`;
+        playerTwoRounds.innerHTML = `// ${pTwoRounds} TURNS`;
     }
 
     pOneMoney = pOneMoney + 1940000;
@@ -77,11 +77,11 @@ playerTwoBtn.addEventListener('click', function() {
     document.getElementById('clickSound').play();
 });
 
-resetBtn.addEventListener('click', function() {
+reset = () => {
     playerOne.classList.remove("inactive");
     playerTwo.classList.remove("inactive")
     document.getElementById('doneSound').play();
-});
+};
 
 document.body.onkeyup = function(e){
     if(e.keyCode == 32){
