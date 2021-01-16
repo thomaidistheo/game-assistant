@@ -225,6 +225,10 @@ let modal = document.querySelector(".modal");
 editBtn.addEventListener('click', function() {
     modal.classList.toggle("hidden");
     playersContainer.classList.toggle("blur");
+    playerOneBtn.disabled = true;
+    playerTwoBtn.disabled = true;
+    nextBtn.disabled = true;
+    resetBtn.disabled = true;
 })
 
 doneBtn.addEventListener('click', function() {
