@@ -55,7 +55,6 @@ textarea, input {
     opacity: 0.85;
 }
 
-
 .info-box {
     width: 450px;
     border: 3px solid var(--light-red);
@@ -162,6 +161,16 @@ textarea, input {
     color: var(--light-text);
 }
 
+.blur {
+    filter: blur(1rem);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-container {
+    position: absolute;
+    margin-bottom: 150px;
+}
+
 .modal {
     display: flex;
     flex-direction: column;
@@ -174,6 +183,7 @@ textarea, input {
     margin-top: 20px;
     height: 55px;
 }
+
 label {
     background: var(--dark-red);
     display: block;
@@ -245,6 +255,7 @@ input {
 }
 
 .players-container {
+    position: relative;
     padding: 10px;
     border: 2px solid var(--light-red);
     display: flex;
