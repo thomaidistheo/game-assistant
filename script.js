@@ -1,4 +1,5 @@
 let playersContainer = document.querySelector(".players-container");
+let seperator = document.querySelector(".seperator");
 let playerOne = document.querySelector(".player-one");
 let playerOneBtn = document.querySelector(".player-1-btn");
 let playerTwo = document.querySelector(".player-two");
@@ -226,12 +227,14 @@ editBtn.addEventListener('click', function() {
     modal.classList.toggle("hidden");
     playerOne.classList.toggle("hidden");
     playerTwo.classList.toggle("hidden");
+    seperator.classList.toggle("hidden");
 })
 
 doneBtn.addEventListener('click', function() {
     modal.classList.add("hidden");
     playerOne.classList.toggle("hidden");
     playerTwo.classList.toggle("hidden");
+    seperator.classList.toggle("hidden");
     playersContainer.classList.toggle("blur");
     playerOneName.innerHTML = playerOneNameInput.value;
     playerTwoName.innerHTML = playerTwoNameInput.value;
