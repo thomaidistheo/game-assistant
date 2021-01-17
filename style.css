@@ -222,6 +222,7 @@ input {
 .instructions {
     font-size: 10px;
     opacity: 0.7;
+    margin-top: 10px;
 }
 
 .next-host-rounds {
@@ -246,7 +247,7 @@ input {
 
 .players-container {
     position: relative;
-    padding: 10px;
+    padding: 20px;
     border: 2px solid var(--light-red);
     display: flex;
     flex-direction: column;
