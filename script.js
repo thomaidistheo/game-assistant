@@ -6,6 +6,7 @@ let playerTwo = document.querySelector(".player-two");
 let playerTwoBtn = document.querySelector(".player-2-btn");
 let resetBtn = document.querySelector(".reset-btn");
 let nextBtn = document.querySelector(".next-btn");
+let btnSection = document.querySelector(".buttons-section");
 let playerOneActive = document.querySelector(".player-one-active");
 let playerTwoActive = document.querySelector(".player-two-active");
 
@@ -97,9 +98,11 @@ reset = () => {
 };
 
 document.body.onkeyup = () => {
-    startHost();
+    if(e.keyCode == 32){
+        startHost();
+    }
+    
 }
-
 
 nextBtn.addEventListener('click', () => {
     startHost();
@@ -175,6 +178,7 @@ editBtn.addEventListener('click', function() {
     playerOne.classList.toggle("hidden");
     playerTwo.classList.toggle("hidden");
     seperator.classList.toggle("hidden");
+    btnSection.classList.toggle("hidden");
 })
 
 doneBtn.addEventListener('click', function() {
@@ -182,10 +186,11 @@ doneBtn.addEventListener('click', function() {
     playerOne.classList.toggle("hidden");
     playerTwo.classList.toggle("hidden");
     seperator.classList.toggle("hidden");
-    playersContainer.classList.toggle("blur");
+    btnSection.classList.toggle("hidden");
     playerOneName.innerHTML = playerOneNameInput.value;
     playerTwoName.innerHTML = playerTwoNameInput.value;
 })
 
 
 // TODO --------------- LocalStorage ---------------
+
