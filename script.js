@@ -112,11 +112,9 @@ startHost = () => {
 }
 
 counterFunc = () => {
-    if ((pOneRounds + pTwoRounds) === 0){
-        totalCounter = 0;
-        return totalCounter;
-    } else if ((pOneRounds + pTwoRounds) % 2 === 0) {
+    if ((p1.turns + p2.turns) % 2 === 0) {
         totalCounter++;
+        setLocalStorage();
         counter.innerHTML = totalCounter;
         return totalCounter;
     } else {
@@ -140,6 +138,7 @@ reset = () => {
     playerTwo.classList.remove("inactive")
     document.getElementById('doneSound').play();
     localStorage.clear()
+    location.reload();
 };
 
 document.body.onkeyup = () => {
@@ -184,15 +183,18 @@ doneBtn.addEventListener('click', function() {
 setLocalStorage = () => {
     localStorage.setItem('player1', JSON.stringify(p1));
     localStorage.setItem('player2', JSON.stringify(p2));
+    localStorage.setItem('counter', totalCounter);
 }
 
 function populateUI() {
     p1stored = JSON.parse(localStorage.getItem('player1'));
     p2stored = JSON.parse(localStorage.getItem('player2'));
+    storedCounter = JSON.parse(localStorage.getItem('counter'));
     
     if (p1stored !== null && p2stored !== null ) {
         p1 = p1stored;
         p2 = p2stored;
+        totalCounter = storedCounter;
         
         playerOneName.innerHTML = p1.name;
         playerTwoName.innerHTML = p2.name;
@@ -207,6 +209,8 @@ function populateUI() {
         (p2.turns <= 1)
         ? playerTwoRounds.innerHTML = `// ${p2.turns} TURN` 
         : playerTwoRounds.innerHTML = `// ${p2.turns} TURNS`;
+
+        counter.innerHTML = totalCounter;
     }
 
 
