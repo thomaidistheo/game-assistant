@@ -178,7 +178,7 @@ doneBtn.addEventListener('click', function() {
 })
 
 
-// TODO --------------- LocalStorage ---------------
+// ^ --------------- LocalStorage ---------------
 
 setLocalStorage = () => {
     localStorage.setItem('player1', JSON.stringify(p1));
@@ -212,7 +212,4 @@ function populateUI() {
 
         counter.innerHTML = totalCounter;
     }
-
-
-    
 }

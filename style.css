@@ -264,3 +264,8 @@ input {
     display: none;
 }
 
+.greedy-button { 
+    margin-top: 20px;
+    scale: 0.7;
+}
+
