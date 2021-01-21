@@ -55,6 +55,16 @@ textarea, input {
     opacity: 0.85;
 }
 
+.players-container {
+    padding: 20px;
+    border: 2px solid var(--light-red);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 15px rgba(150, 40, 40, 0.85);
+}
+
 .info-box {
     width: 450px;
     border: 3px solid var(--light-red);
@@ -123,6 +133,53 @@ textarea, input {
     border: none;
 
     color: var(--light-text);
+}
+
+.player-one-active { 
+    margin-top: -20px;
+
+    position: absolute;
+}
+
+.player-two-active {
+    margin-top: -20px;
+
+    position: absolute;
+}
+
+.instructions {
+    font-size: 10px;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+.next-host-rounds {
+    display: flex;
+    align-items: center;
+
+    margin-top: 25px;
+    gap: 5px;
+}
+
+.counter {
+    height: 50px;
+    width: 50px;
+
+    background: var(--dark-grey);
+    border: 2px solid var(--light-grey);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0 20px 0;
+
+    width: 250px;
+    justify-content: space-between;
 }
 
 .reset-btn {
@@ -207,64 +264,3 @@ input {
     display: none;
 }
 
-.player-one-active { 
-    margin-top: -20px;
-
-    position: absolute;
-}
-
-.player-two-active {
-    margin-top: -20px;
-
-    position: absolute;
-}
-
-.instructions {
-    font-size: 10px;
-    opacity: 0.7;
-    margin-top: 10px;
-}
-
-.next-host-rounds {
-    display: flex;
-    align-items: center;
-
-    margin-top: 25px;
-    gap: 5px;
-}
-
-.counter {
-    height: 50px;
-    width: 50px;
-
-    background: var(--dark-grey);
-    border: 2px solid var(--light-grey);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.players-container {
-    position: relative;
-    padding: 20px;
-    border: 2px solid var(--light-red);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 5px 15px rgba(150, 40, 40, 0.85);
-}
-
-.section {
-    display: flex;
-    gap: 10px;
-    margin: 20px 0 20px 0;
-
-    width: 250px;
-    justify-content: space-between;
-}
-
-.section:nth-child(3) {
-    margin-top: 0;
-}
