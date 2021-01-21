@@ -32,49 +32,64 @@ let editBtn = document.querySelector(".edit-btn");
 let doneBtn = document.querySelector(".done-btn");
 let modal = document.querySelector(".modal");
 
+
+// ------------------------------------------------------------------------
+
+class Player { 
+    constructor() {
+        this.name = '';
+        this.money = 0;
+        this.turns = 0;
+    }
+}
+
+let p1 = new Player();
+let p2 = new Player();
+
+populateUI();
+
+// ------------------------------------------------------------------------
+
 playerOneHost = () => {
     playerTwo.classList.add("inactive");
     playerOne.classList.remove("inactive");
-    nextBtn.innerHTML = 'next host';
-
-    
-    pOneRounds = pOneRounds+1;
-    if(pOneRounds <= 1){
-        playerOneRounds.innerHTML = `// ${pOneRounds} TURN`;
-    } else {
-        playerOneRounds.innerHTML = `// ${pOneRounds} TURNS`;
-    }
-    
-    pTwoMoney = pTwoMoney + 1940000;
-    playerTwoMoney.innerHTML = `// $${pTwoMoney}`;
-    
     playerOneActive.classList.remove("hidden");
     playerTwoActive.classList.add("hidden")
-    
+    nextBtn.innerHTML = 'next host';
     document.getElementById('clickSound').play();
+
+    p1.turns++;
+    p2.money += 1940000;
+   
+    (p1.turns <= 1)
+        ? playerOneRounds.innerHTML = `// ${p1.turns} TURN` 
+        : playerOneRounds.innerHTML = `// ${p1.turns} TURNS`;
+    
+    playerTwoMoney.innerHTML = `// $${p2.money}`;
+
+    setLocalStorage();
 }
 
 playerTwoHost = () => {
     playerOne.classList.add("inactive");
     playerTwo.classList.remove("inactive");
-    nextBtn.innerHTML = 'next host';
-
-
-    pTwoRounds = pTwoRounds+1;
-    if(pTwoRounds <= 1){
-        playerTwoRounds.innerHTML = `// ${pTwoRounds} TURN`;
-    } else {
-        playerTwoRounds.innerHTML = `// ${pTwoRounds} TURNS`;
-    }
-
-    pOneMoney = pOneMoney + 1940000;
-    playerOneMoney.innerHTML = `// $${pOneMoney}`;
-
     playerTwoActive.classList.remove("hidden");
     playerOneActive.classList.add("hidden");
-
+    nextBtn.innerHTML = 'next host';
     document.getElementById('clickSound').play();
+
+    p2.turns++;
+    p1.money += 1940000;
+
+    (p2.turns <= 1)
+    ? playerTwoRounds.innerHTML = `// ${p2.turns} TURN` 
+    : playerTwoRounds.innerHTML = `// ${p2.turns} TURNS`;
+    
+    playerOneMoney.innerHTML = `// ${p1.money}`;
+
+    setLocalStorage();
 }
+
 startHost = () => {
     playerOneBtn.disabled = true;
     playerTwoBtn.disabled = true;
@@ -117,12 +132,14 @@ playerOneBtn.addEventListener('click', function() {
 playerTwoBtn.addEventListener('click', function() {
     playerTwoHost();
     counterFunc();  
+
 });
 
 reset = () => {
     playerOne.classList.remove("inactive");
     playerTwo.classList.remove("inactive")
     document.getElementById('doneSound').play();
+    localStorage.clear()
 };
 
 document.body.onkeyup = () => {
@@ -152,10 +169,46 @@ doneBtn.addEventListener('click', function() {
     playerTwo.classList.toggle("hidden");
     seperator.classList.toggle("hidden");
     btnSection.classList.toggle("hidden");
-    playerOneName.innerHTML = playerOneNameInput.value;
-    playerTwoName.innerHTML = playerTwoNameInput.value;
+
+    p1.name = playerOneNameInput.value;
+    playerOneName.innerHTML = p1.name;
+    p2.name = playerTwoNameInput.value;
+    playerTwoName.innerHTML = p2.name;
+
+    setLocalStorage();
 })
 
 
 // TODO --------------- LocalStorage ---------------
 
+setLocalStorage = () => {
+    localStorage.setItem('player1', JSON.stringify(p1));
+    localStorage.setItem('player2', JSON.stringify(p2));
+}
+
+function populateUI() {
+    p1stored = JSON.parse(localStorage.getItem('player1'));
+    p2stored = JSON.parse(localStorage.getItem('player2'));
+    
+    if (p1stored !== null && p2stored !== null ) {
+        p1 = p1stored;
+        p2 = p2stored;
+        
+        playerOneName.innerHTML = p1.name;
+        playerTwoName.innerHTML = p2.name;
+    
+        playerOneMoney.innerHTML = `// ${p1.money}`;
+        playerTwoMoney.innerHTML = `// $${p2.money}`;
+    
+        (p1.turns <= 1)
+        ? playerOneRounds.innerHTML = `// ${p1.turns} TURN` 
+        : playerOneRounds.innerHTML = `// ${p1.turns} TURNS`;
+    
+        (p2.turns <= 1)
+        ? playerTwoRounds.innerHTML = `// ${p2.turns} TURN` 
+        : playerTwoRounds.innerHTML = `// ${p2.turns} TURNS`;
+    }
+
+
+    
+}
