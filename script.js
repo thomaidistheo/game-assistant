@@ -213,3 +213,4 @@ function populateUI() {
         counter.innerHTML = totalCounter;
     }
 }
+
