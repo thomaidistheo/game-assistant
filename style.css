@@ -262,32 +262,3 @@ input {
 .hidden { 
     display: none;
 }
-
-.greedy-button a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.greedy-button { 
-    margin-top: 20px;
-    width: 250px;
-    background: none;
-    border: 3px solid var(--dark-red);
-    outline: 3px solid var(--dark-red);
-    outline-offset: -3px;
-    padding: 15px 30px;
-
-    color: #fff;
-    cursor: pointer;
-    
-    transition: all 250ms ease;
-}
-
-.greedy-button:hover,
-.greedy-button:active {
-    outline-offset: -10px;
-    border: 3px solid var(--light-red);
-    outline: 3px solid var(--light-red);
-    background-color: var(--dark-red);
-    box-shadow: 0px 0px 100px rgba(150, 40, 40, 0.85);
-}
